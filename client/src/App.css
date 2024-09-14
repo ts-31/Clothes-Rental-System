@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,34 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+/* styles.css */
+.page-container {
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1; /* Fills the remaining space */
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(245, 240, 230);
+}
+
+/* .navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000; 
+} */
+
+/* NavbarComponent.css or App.css */
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
