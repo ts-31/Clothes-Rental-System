@@ -34,8 +34,8 @@ function NavbarComponent() {
             <Nav.Link as={Link} to="/lend" className="ms-5">
               Lend
             </Nav.Link>
-            <Nav.Link as={Link} to="/test" className="ms-5">
-              test
+            <Nav.Link as={Link} to="/rent" className="ms-5">
+              Rent
             </Nav.Link>
           </Nav>
           <Form className="d-flex">

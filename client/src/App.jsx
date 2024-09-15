@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import Chat from "./pages/Chat";
 import Account from "./pages/Account";
 import Lend from "./pages/Lend";
-import Test from "./pages/Test";
+import Rent from "./pages/Rent";
 import NavbarComponent from "./components/NavbarComponent";
 import "./App.css";
 
@@ -21,7 +21,7 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="account" element={<Account />} />
             <Route path="lend" element={<Lend />} />
-            <Route path="test" element={<Test />} />
+            <Route path="rent" element={<Rent />} />
           </Routes>
         </div>
       </div>
