@@ -1,18 +1,19 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Login from "./pages/Login";
 import Chat from "./pages/Chat";
 import Account from "./pages/Account";
 import Lend from "./pages/Lend";
 import Rent from "./pages/Rent";
 import NavbarComponent from "./components/NavbarComponent";
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
   return (
     <Router>
-      <div className="page-container">
+      <div className="page-container min-height-1000">
         <NavbarComponent />
         <div className="content">
           <Routes>
@@ -24,6 +25,7 @@ function App() {
             <Route path="rent" element={<Rent />} />
           </Routes>
         </div>
+        <Footer/>
       </div>
     </Router>
   );
