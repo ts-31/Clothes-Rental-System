@@ -1,0 +1,48 @@
+.carousel-item {
+  height: 450px;
+}
+
+.carousel-img {
+  object-fit: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.carousel-control-prev {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("https://img.icons8.com/ios-filled/50/ffffff/chevron-left.png");
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.carousel-control-next-icon {
+  background-image: url("https://img.icons8.com/ios-filled/50/ffffff/chevron-right.png");
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: white;
+}
