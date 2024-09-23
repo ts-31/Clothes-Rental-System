@@ -22,8 +22,10 @@ router.post("/lend", upload.single("photo"), async (req, res) => {
     rentalPrice,
     deposit,
     location,
+    author,
   } = req.body;
-
+  console.log("Req comes to backend succ");
+  console.log(req.body);
   if (!req.file) {
     return res.status(400).json({ error: "No file uploaded" });
   }
@@ -42,6 +44,7 @@ router.post("/lend", upload.single("photo"), async (req, res) => {
       rentalPrice,
       deposit,
       location,
+      author,
       photoUrl: result.secure_url,
     });
     await post.save();
@@ -50,6 +53,7 @@ router.post("/lend", upload.single("photo"), async (req, res) => {
       imageUrl: result.secure_url,
     });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "Error uploading image or saving post" });
   }
 });

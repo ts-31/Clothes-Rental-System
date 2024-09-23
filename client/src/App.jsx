@@ -13,7 +13,7 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <div className="page-container min-height-1000">
+      <div className="page-container">
         <NavbarComponent />
         <div className="content">
           <Routes>

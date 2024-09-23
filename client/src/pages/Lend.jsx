@@ -1,14 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Lend.css";
 import { Button } from "react-bootstrap";
+import { AuthContext } from '../main'
 
 const Lend = () => {
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
   const [photo, setPhoto] = useState(null);
+  const { userId } = useContext(AuthContext);
   const [formData, setFormData] = useState({
     clothingType: "",
     brand: "",
@@ -19,6 +21,7 @@ const Lend = () => {
     rentalPrice: "",
     deposit: "",
     location: "",
+    author: "",
   });
 
   const handleChange = (e) => {
@@ -47,6 +50,7 @@ const Lend = () => {
     data.append("rentalPrice", formData.rentalPrice);
     data.append("deposit", formData.deposit);
     data.append("location", formData.location);
+    data.append("author", userId);
     data.append("photo", photo);
     setErrorMsg("");
     setSuccessMsg("");
@@ -74,6 +78,7 @@ const Lend = () => {
           rentalPrice: "",
           deposit: "",
           location: "",
+          author: "",
         });
       }
     } catch (error) {
