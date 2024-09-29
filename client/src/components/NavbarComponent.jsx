@@ -12,7 +12,10 @@ function NavbarComponent() {
   const { username } = useContext(AuthContext);
   return (
     // <Navbar expand="lg" className="bg-body-tertiary w-100 mt-3">
-    <Navbar expand="lg" className="bg-dark navbar-dark w-auto mt-3 mx-3 rounded-top-3">
+    <Navbar
+      expand="lg"
+      className="bg-dark navbar-dark w-auto mt-3 mx-3 rounded-top-3"
+    >
       <Container fluid>
         <Navbar.Brand as={Link} to="/">
           {username ? `Hello, ${username}` : "ClothesRental"}

@@ -1,0 +1,13 @@
+.full-height {
+  height: 100vh; /* Full height of the viewport */
+}
+.row-1 {
+  height: 10%; /* 1 part */
+  /* background-color: #f8d7da;  */
+  background-color: gRAY#f8d7da;
+}
+.row-2 {
+  height: 90%; /* 2 parts */
+  background-color: rgb(226, 232, 228);
+  /* background-color: white;  */
+}

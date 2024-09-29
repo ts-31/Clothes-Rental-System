@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login";
-import Chat from "./pages/Chat";
+import Chat from "./pages/Chat/Chat";
 import Account from "./pages/Account";
 import Lend from "./pages/Lend";
 import Rent from "./pages/Rent";
@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div className="page-container">
         <NavbarComponent />
-        <div className="content">
+        <div className="content pb-3">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="chat" element={<Chat />} />
@@ -25,7 +25,7 @@ function App() {
             <Route path="rent" element={<Rent />} />
           </Routes>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     </Router>
   );

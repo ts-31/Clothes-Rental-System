@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useEffect, useState } from "react";
 import ClothesCard from "../components/ClothesCard";
+import config from "../config";
 
 export default function Rent() {
   const [pageStatus, setPageStatus] = useState({
@@ -16,7 +17,7 @@ export default function Rent() {
   const fetchLendPost = async () => {
     setPageStatus({ loader: true });
     try {
-      const response = await fetch("http://localhost:5000/api/post/rent", {
+      const response = await fetch(`${config.API_URL}/api/post/rent`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

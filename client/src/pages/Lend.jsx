@@ -1,9 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import React, { useContext, useState } from "react";
 import "./Lend.css";
 import { Button } from "react-bootstrap";
-import { AuthContext } from '../main'
+import { AuthContext } from "../main";
+import config from "../config";
 
 const Lend = () => {
   const [loading, setLoading] = useState(false);
@@ -55,7 +55,7 @@ const Lend = () => {
     setErrorMsg("");
     setSuccessMsg("");
     try {
-      const response = await fetch("http://localhost:5000/api/post/lend", {
+      const response = await fetch(`${config.API_URL}/api/post/lend`, {
         method: "POST",
         body: data,
       });

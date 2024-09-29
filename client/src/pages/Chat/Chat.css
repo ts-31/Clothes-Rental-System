@@ -1,0 +1,24 @@
+.bg-lightblue {
+  background-color: white;
+}
+
+.bg-lightgreen {
+  background-color: lightgreen;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.table-container::-webkit-scrollbar {
+  width: 5px; /* Make the scrollbar thinner */
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Make the scrollbar round */
+}
+
+.table-container::-webkit-scrollbar-track {
+  background-color: transparent; /* Hide scrollbar track for a cleaner look */
+}

@@ -10,17 +10,19 @@ router.post("/register", async (req, res) => {
     const existingUsers = await User.findOne({ email });
     if (existingUsers) {
       return res.status(400).json({ message: "User already exists" });
-    } else if (password.length<6) {
-      return res.status(400).json({ message: "Password must be atleast of 6 characters" })
+    } else if (password.length < 6) {
+      return res
+        .status(400)
+        .json({ message: "Password must be atleast of 6 characters" });
     } else {
       const checkUsernameExist = await User.findOne({ username });
-      if(checkUsernameExist) {
+      if (checkUsernameExist) {
         return res.status(400).json({ message: "Choose different username" });
       }
     }
     const hashPassword = await bcrypt.hash(password, 10);
     const user = new User({
-      username: username, 
+      username: username,
       email: email,
       password: hashPassword,
     });
