@@ -95,14 +95,18 @@ const Lend = () => {
         <div className="row">
           <div className="col-md-6 mb-3">
             <label className="form-label">Clothing Type</label>
-            <input
-              type="text"
-              className="form-control"
+            <select
+              className="form-select"
               name="clothingType"
               value={formData.clothingType}
               onChange={handleChange}
               required
-            />
+            >
+              <option value="">Select Clothing Type</option>
+              <option value="Wedding">Wedding</option>
+              <option value="Party Wear">Party Wear</option>
+              <option value="Formal Wear">Formal Wear</option>
+            </select>
           </div>
           <div className="col-md-6 mb-3">
             <label className="form-label">Brand</label>
