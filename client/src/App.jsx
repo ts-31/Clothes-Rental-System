@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Chat from "./pages/Chat/Chat";
 import Account from "./pages/Account";
 import Lend from "./pages/Lend";
+import ViewClothesPage from "./pages/ViewClothesPage";
 import Rent from "./pages/Rent";
 import NavbarComponent from "./components/NavbarComponent";
 import Footer from "./components/Footer";
@@ -23,6 +24,7 @@ function App() {
             <Route path="account" element={<Account />} />
             <Route path="lend" element={<Lend />} />
             <Route path="rent" element={<Rent />} />
+            <Route path="viewclothes" element={<ViewClothesPage />} />
           </Routes>
         </div>
         <Footer />

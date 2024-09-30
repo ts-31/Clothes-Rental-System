@@ -3,10 +3,11 @@ const User = require("../models/User");
 const Message = require("../models/Message");
 const router = express.Router();
 
+//test route to display all available users
 router.get("/getUsers", async (req, res) => {
   try {
     const users = await User.find({}, "username");
-    res.json(users.map((user) => ({ id: user._id, name: user.username })));
+    res.json(users.map((user) => ({ id: user._id, username: user.username })));
   } catch (error) {
     console.log("Error msg: ", error);
     res.status(500).send("Server Error");

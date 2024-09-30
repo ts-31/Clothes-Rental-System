@@ -2,8 +2,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useEffect, useState } from "react";
 import ClothesCard from "../components/ClothesCard";
 import config from "../config";
+import { useNavigate } from "react-router-dom";
 
 export default function Rent() {
+  const navigate = useNavigate();
   const [pageStatus, setPageStatus] = useState({
     loader: false,
     error: "",
@@ -39,11 +41,15 @@ export default function Rent() {
     }
   };
 
+  const viewClothesDetails = (post) => {
+    navigate("/viewClothes", { state: { post } });
+  };
+
   return (
     <div className="d-flex justify-content-center">
       {pageStatus.loader ? (
-        <div class="spinner-border" role="status">
-          <span class="sr-only"></span>
+        <div className="spinner-border" role="status">
+          <span className="sr-only"></span>
         </div>
       ) : (
         <div className="container mt-4">
@@ -52,6 +58,7 @@ export default function Rent() {
               <div
                 className="col-12 col-sm-6 col-md-4 col-lg-3 p-0"
                 key={index}
+                onClick={() => viewClothesDetails(card)}
               >
                 <ClothesCard
                   image={card.photoUrl}

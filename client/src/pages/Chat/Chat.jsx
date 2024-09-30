@@ -3,6 +3,7 @@ import { Container, Row, Col, Table } from "react-bootstrap";
 import "./Chat.css";
 import profile from "../../assets/profile.png";
 import config from "../../config";
+import { useLocation } from "react-router-dom";
 
 const ChatBox = React.lazy(() => import("./ChatBox"));
 
@@ -11,6 +12,9 @@ export default function Chat() {
   const [selectedUser, setSelectedUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const location = useLocation();
+  const { receiver } = location.state || {};
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -27,6 +31,13 @@ export default function Chat() {
     };
     fetchUsers();
   }, []);
+
+  useEffect(() => {
+    if (receiver) {
+      console.log("Receiver: ", receiver);
+      setSelectedUser(receiver);
+    }
+  }, [receiver]);
 
   const handleUserClick = useCallback((user) => {
     setSelectedUser(user);
@@ -49,10 +60,10 @@ export default function Chat() {
               {error ? <p>Error: {error}</p> : null}
               <Table striped bordered hover className="rounded">
                 <tbody>
-                  {users.map(({ id, name }) => (
+                  {users.map(({ id, username }) => (
                     <tr
                       key={id}
-                      onClick={() => handleUserClick({ id, name })}
+                      onClick={() => handleUserClick({ id, username })}
                       className="align-middle"
                     >
                       <td className="d-flex align-items-center py-3">
@@ -70,7 +81,7 @@ export default function Chat() {
                           className="text-start"
                           style={{ fontSize: "16px" }}
                         >
-                          {name}
+                          {username}
                         </span>
                       </td>
                     </tr>

@@ -62,7 +62,7 @@ const ChatBox = ({ receiver }) => {
       <div className="row h-100">
         <div className="col-12 row-1 d-flex align-items-center justify-content-center p-0 rounded-top bg-light bg-gradient">
           {receiver ? (
-            <h5>{receiver.name}</h5>
+            <h5>{receiver.username}</h5>
           ) : (
             <h5>Select a user to start chatting</h5>
           )}
@@ -95,7 +95,7 @@ const ChatBox = ({ receiver }) => {
                   style={{ maxWidth: "60%" }}
                 >
                   <strong>
-                    {msg.sender === userId ? "You" : receiver.name}
+                    {msg.sender === userId ? "You" : receiver.username}
                   </strong>
                   : {msg.content}
                 </div>
