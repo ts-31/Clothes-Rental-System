@@ -7,6 +7,7 @@ const connectToMongoDb = require("./db/db");
 const authRoutes = require("./routes/authRoutes");
 const lendRoutes = require("./routes/clothesRoute");
 const chatMessageRoutes = require("./routes/chatMessageRoute");
+const orderRoute = require("./routes/orderRoute");
 const Message = require("./models/Message");
 
 const app = express();
@@ -25,6 +26,7 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/post", lendRoutes);
 app.use("/api/msg", chatMessageRoutes);
+app.use("/api/order", orderRoute);
 
 const port = process.env.PORT || 5000;
 

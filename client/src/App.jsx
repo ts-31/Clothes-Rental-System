@@ -6,7 +6,7 @@ import Chat from "./pages/Chat/Chat";
 import Account from "./pages/Account";
 import Lend from "./pages/Lend";
 import ViewClothesPage from "./pages/ViewClothesPage";
-import Rent from "./pages/Rent";
+import Rent from "./pages/Rent/Rent";
 import NavbarComponent from "./components/NavbarComponent";
 import Footer from "./components/Footer";
 import "./App.css";

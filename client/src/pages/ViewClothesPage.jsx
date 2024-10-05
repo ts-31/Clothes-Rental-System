@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import OrderModel from "../components/OrderModel";
 import config from "../config";
 
 export default function ViewClothes() {
-  const [renter, setRenter] = useState(null);
+  const [lender, setLender] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [modalShow, setModalShow] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { post } = location.state || {};
@@ -22,9 +25,9 @@ export default function ViewClothes() {
         const data = await response.json();
         console.log("DATA: ", data);
         if (data && data.username) {
-          setRenter(data);
+          setLender(data);
         } else {
-          setRenter(null);
+          setLender(null);
         }
         setLoading(false);
       } catch (error) {
@@ -37,7 +40,7 @@ export default function ViewClothes() {
   }, [post.author]);
 
   const handleChatClick = (receiver) => {
-    if (renter) {
+    if (lender) {
       navigate("/chat", { state: { receiver } });
     }
   };
@@ -97,21 +100,28 @@ export default function ViewClothes() {
           </p>
 
           <div className="d-flex flex-column flex-md-row justify-content-center mt-4">
-            <button
+            <Button
               className="btn btn-primary btn-lg me-md-2 mb-2 mb-md-0"
               style={{ borderRadius: "50px", padding: "12px 30px" }}
+              onClick={() => setModalShow(true)}
             >
               Rent Now
-            </button>
+            </Button>
+            <OrderModel
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+              post={post}
+              lender={lender}
+            />
             <button
               className="btn btn-outline-primary btn-lg mb-2 mb-md-0"
               style={{ borderRadius: "50px", padding: "12px 30px" }}
-              onClick={() => handleChatClick(renter)}
+              onClick={() => handleChatClick(lender)}
               disabled={loading}
             >
               {loading
                 ? "Loading..."
-                : `Chat with ${renter?.username || "Renter"}`}
+                : `Chat with ${lender?.username || "Renter"}`}
             </button>
           </div>
         </div>
