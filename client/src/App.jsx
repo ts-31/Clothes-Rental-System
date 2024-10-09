@@ -9,6 +9,7 @@ import ViewClothesPage from "./pages/ViewClothesPage";
 import Rent from "./pages/Rent/Rent";
 import NavbarComponent from "./components/NavbarComponent";
 import Footer from "./components/Footer";
+import Orders from "./pages/Orders/Orders";
 import "./App.css";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="lend" element={<Lend />} />
             <Route path="rent" element={<Rent />} />
             <Route path="viewclothes" element={<ViewClothesPage />} />
+            <Route path="orders" element={<Orders />} />
           </Routes>
         </div>
         <Footer />
