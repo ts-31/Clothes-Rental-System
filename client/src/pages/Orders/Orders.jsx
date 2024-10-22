@@ -55,15 +55,20 @@ const Order = () => {
           key={order._id}
           onClick={() => handleOrderClick(order)}
         >
-          <Row>
-            <Col md={3}>
+          <Row className="align-items-center">
+            <Col xs={12} md={3} className="mb-3 mb-md-0 text-center">
               <Card.Img
-                src={order.photoUrl || "https://via.placeholder.com/100"}
+                src={order.photoUrl || "https://via.placeholder.com/150"}
                 alt="Order Image"
-                style={{ width: "150px", height: "150px", objectFit: "cover" }}
+                style={{
+                  width: "150px",
+                  height: "150px",
+                  objectFit: "cover",
+                }}
               />
             </Col>
-            <Col md={9}>
+
+            <Col xs={12} md={9} className="text-center text-md-start">
               <Card.Body>
                 <Card.Title>Type: {order.clothingType}</Card.Title>
                 <Card.Text>Brand: {order.brand}</Card.Text>
