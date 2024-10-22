@@ -3,8 +3,11 @@ import { Form, Button } from "react-bootstrap";
 import "./style.css";
 import { AuthContext } from "../main";
 import config from "../config";
+import { useLocation } from "react-router-dom";
 
 const Login = () => {
+  const location = useLocation();
+  const message = location.state?.message;
   const { login } = useContext(AuthContext);
   const [isSignup, setIsSignup] = useState(false);
   const [formStatus, setFormStatus] = useState({
@@ -113,6 +116,9 @@ const Login = () => {
 
   return (
     <div className="login-container bg-white border border-primary rounded ">
+      <div>
+        {message && <div className="alert alert-warning">{message}</div>}
+      </div>
       <Form className="p-4" onSubmit={handleSubmit}>
         <div className="h4 text-center mb-4">
           {isSignup ? "Sign Up" : "Log In"}

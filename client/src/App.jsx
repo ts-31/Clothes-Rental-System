@@ -9,6 +9,7 @@ import ViewClothesPage from "./pages/ViewClothesPage";
 import Rent from "./pages/Rent/Rent";
 import NavbarComponent from "./components/NavbarComponent";
 import Footer from "./components/Footer";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Orders from "./pages/Orders/Orders";
 import "./App.css";
 
@@ -20,13 +21,28 @@ function App() {
         <div className="content pb-3">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="chat" element={<Chat />} />
             <Route path="login" element={<Login />} />
-            <Route path="account" element={<Account />} />
-            <Route path="lend" element={<Lend />} />
+            <Route
+              path="chat"
+              element={<ProtectedRoute element={<Chat />} />}
+            />
+            <Route
+              path="account"
+              element={<ProtectedRoute element={<Account />} />}
+            />
+            <Route
+              path="lend"
+              element={<ProtectedRoute element={<Lend />} />}
+            />
             <Route path="rent" element={<Rent />} />
-            <Route path="viewclothes" element={<ViewClothesPage />} />
-            <Route path="orders" element={<Orders />} />
+            <Route
+              path="viewclothes"
+              element={<ProtectedRoute element={<ViewClothesPage />} />}
+            />
+            <Route
+              path="orders"
+              element={<ProtectedRoute element={<Orders />} />}
+            />
           </Routes>
         </div>
         <Footer />
